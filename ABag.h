@@ -19,12 +19,11 @@ public:
 	// constructors/destructor
 
 	ABag(int cap=20)	//default constructor with capacity parameter to initialize data member variable array size
+						//	default value is arbitrary number of 20
 	{
-		capacity = cap;					//Initialize capacity member variable to passed in value
-		data = new E[capacity];			//Initialize data member variable to array of size capacity
-		for (int i = 0; i < capacity; i++)
-			data[i] = E();
-		used = 0;						//Initialize used member variable to 0 indicating nothing is in the array
+		capacity = cap;						//Initialize capacity member variable to passed in value
+		data = new E[capacity];				//Initialize data member variable to array of size capacity
+		used = 0;							//Initialize used member variable to 0 indicating nothing is in the array
 	}
 
 	~ABag() {}
@@ -116,6 +115,8 @@ public:
 	//operator+=
 	bool operator+=(const E& addend)
 	{
+		if (addItem(addend))
+			return true;
 
 		return false;
 	}
