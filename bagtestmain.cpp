@@ -9,7 +9,6 @@
 * updated initial main() cout statement to include name
 */
 
-#pragma once
 #include <string>
 #include <sstream>
 #include "Functions.h"
