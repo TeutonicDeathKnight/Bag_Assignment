@@ -20,70 +20,60 @@ public:
 
 	ABag(int cap=20)	//default constructor with capacity parameter to initialize data member variable array size
 	{
-		capacity = cap;				//Initialize capacity member variable to passed in value
-		data = new E[capacity];		//Initialize data member variable to array of size capacity
-		used = 0;					//Initialize used member variable to 0 indicating nothing is in the array
+		capacity = cap;					//Initialize capacity member variable to passed in value
+		data = new E[capacity];			//Initialize data member variable to array of size capacity
+		used = 0;						//Initialize used member variable to 0 indicating nothing is in the array
 	}
 
-	~ABag()
-	{
-		for (int i = 0; i < used; i++)
-		{
-			data[i] = NULL;
-		}
-
-		delete data;
-
-		used = NULL;
-
-		capacity = NULL;
-	}
+	~ABag() {}
 
 	//addItem()
 	bool addItem(const E& item)
 	{
-		bool returnBool = false;
-
 		if (used < capacity)
 		{
 			data[used] = item;
 			used++;
-			returnBool = true;
+			return true;
 		}
 		
-		return returnBool;
+		return false;
 	}
 
 	//remove()
 	bool remove(E& item)
 	{
-		bool returnBool = false;
 
-		return returnBool;
+		return false;
 	}
 
 	//removeTop()
 	bool removeTop(E& returnValue)
 	{
-		bool returnBool = false;
 
-		return returnBool;
+		return false;
 	}
 
 	//find()
 	bool find(E& returnValue) const
 	{
-		bool returnBool = false;
-
-		return returnBool;
+		for (int i = 0; i < used; i++)
+		{
+			if (data[i] == returnValue)
+			{
+				returnValue = data[i];
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 	//inspectTop()
 	bool inspectTop(E& item) const
 	{
-		bool returnBool = false;
 
-		return returnBool;
+		return false;
 	}
 
 	//emptyBag()
@@ -95,9 +85,8 @@ public:
 	//operator+=
 	bool operator+=(const E& addend)
 	{
-		bool returnBool = false;
 
-		return returnBool;
+		return false;
 	}
 
 	//size()

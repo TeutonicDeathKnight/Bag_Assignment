@@ -5,31 +5,90 @@
 
 using namespace std;
 
+const KVpair<int, string> intStr1(1, "love");
+const KVpair<int, string> intStr2(2, "compassion");
+const KVpair<int, string> intStr3(3, "integrity");
+const KVpair<string, int> strInt1("love", 1);
+const KVpair<string, int> strInt2("compassion", 2);
+const KVpair<string, int> strInt3("integrity", 3);
+
 int main()
 {
-	cout << "Start of program\n\n";
+	cout << "start intStr test\n\n";
 
-	ABag<int>* bag1 = new ABag<int>(2);
+	ABag<KVpair<int, string>>* intStr = new ABag<KVpair<int, string>>;
 
-	cout << "Bag1 size: " << bag1->size() << '\n' << "Bag1 cap: " << bag1->bagCapacity() << "\n\n";
+	cout << "Size/cap check\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
 
-	cout << "Bag1 pointer: " << bag1 << "\n\n";
+	cout << "intStr pointer: " << intStr << "\n\n";
 
-	cout << bag1->addItem(1) << "\n";
-	cout << bag1->addItem(3) << "\n";
-	cout << bag1->addItem(92) << "\n\n";
+	intStr->addItem(intStr1);
+	intStr->addItem(intStr2);
+	intStr->addItem(intStr3);
 
-	cout << "Bag1 size: " << bag1->size() << '\n' << "Bag1 cap: " << bag1->bagCapacity() << "\n\n";
+	cout << "Size/cap check\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
 
-	cout << "Deleting bag1\n\n";
+	KVpair<int, string> test1(1, "love");
+	KVpair<int, string> test2(1, "other");
+	KVpair<int, string> test3(2, "compassion");
+	KVpair<int, string> test4(2, "other");
+	KVpair<int, string> test5(3, "integrity");
+	KVpair<int, string> test6(3, "other");
 
-	delete bag1;
+	cout << "Find check\n----------\n"
+		<< "Found 1 (first): " << intStr->find(test1) << '\n'
+		<< "Found 1 (second): " << intStr->find(test2) << '\n'
+		<< "Found 2 (first): " << intStr->find(test3) << '\n'
+		<< "Found 2 (second): " << intStr->find(test4) << '\n'
+		<< "Found 3 (first): " << intStr->find(test5) << '\n'
+		<< "Found 3 (second): " << intStr->find(test6) << "\n\n";
 
-	bag1 = NULL;
+	cout << "Deleting intStr\n\n";
 
-	cout << "Bag1 pointer: " << bag1 << "\n\n";
+	delete intStr;
 
-	cout << "End of program\n\n";
+	intStr = NULL;
+
+	cout << "intStr pointer: " << intStr << "\n\n";
+
+	cout << "end intStr test\n\n\n\n\n\nbegin strInt test\n\n";
+
+	ABag<KVpair<string, int>>* strInt = new ABag<KVpair<string, int>>;
+
+	cout << "Size/cap check\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
+
+	cout << "strInt pointer: " << strInt << "\n\n";
+
+	strInt->addItem(strInt1);
+	strInt->addItem(strInt2);
+	strInt->addItem(strInt3);
+
+	cout << "Size/cap check\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
+
+	KVpair<string, int> test7("love", 1);
+	KVpair<string, int> test8("love", 4);
+	KVpair<string, int> test9("compassion", 2);
+	KVpair<string, int> test10("compassion", 5);
+	KVpair<string, int> test11("integrity", 3);
+	KVpair<string, int> test12("integrity", 6);
+
+	cout << "Find check\n----------\n"
+		<< "Found 1 (first): " << strInt->find(test7) << '\n'
+		<< "Found 1 (second): " << strInt->find(test8) << '\n'
+		<< "Found 2 (first): " << strInt->find(test9) << '\n'
+		<< "Found 2 (second): " << strInt->find(test10) << '\n'
+		<< "Found 3 (first): " << strInt->find(test11) << '\n'
+		<< "Found 3 (second): " << strInt->find(test12) << "\n\n";
+
+	cout << "Deleting strInt\n\n";
+
+	delete strInt;
+
+	strInt = NULL;
+
+	cout << "strInt pointer: " << strInt << "\n\n";
+
+	cout << "end strInt test\n\n";
 
 	system("pause");
 	return 0;
