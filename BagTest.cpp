@@ -46,13 +46,21 @@ int main()
 
 	cout << "Size/cap check 1\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
 
-	intStr->remove(intStr1);
+	/*intStr->remove(intStr1);
 
 	cout << "Size/cap check 2\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
 
 	intStr->removeTop(emptyIntStr);
 
 	cout << "Size/cap check 3\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
+
+	bool intStrInspTop = intStr->inspectTop(emptyIntStr);
+	if (intStrInspTop == true)
+		cout << "intStr top value is: " << emptyIntStr.key() << "\n\n";
+	else
+		cout << "intStr inspectTop() failed\n\n";*/
+
+	intStr->emptyBag();
 
 	cout << "Find check\n----------\n"
 		<< "Found 1 (first): " << intStr->find(test1) << '\n'
@@ -92,13 +100,21 @@ int main()
 
 	cout << "Size/cap check 1\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
 
-	strInt->remove(strInt4);
+	/*strInt->remove(strInt5);
 
 	cout << "Size/cap check 2\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
 
 	strInt->removeTop(emptyStrInt);
 
 	cout << "Size/cap check 3\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
+
+	bool strIntInspTop = strInt->inspectTop(emptyStrInt);
+	if (strIntInspTop == true)
+		cout << "strInt top value is: " << emptyStrInt.key() << "\n\n";
+	else
+		cout << "strInt inspectTop() failed\n\n";*/
+
+	strInt->emptyBag();
 
 	cout << "Find check\n----------\n"
 		<< "Found 1 (first): " << strInt->find(test7) << '\n'

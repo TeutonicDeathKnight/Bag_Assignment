@@ -54,7 +54,6 @@ public:
 					data[i] = data[i + 1];	//set its value to the value of the next item in array
 				data[used - 1] = E();		//set last item in used portion of array to empty E item using default constructor
 				used--;						//decrement used member variable value to indicate the item was removed
-
 				return true;
 			}
 		}
@@ -70,7 +69,6 @@ public:
 			returnValue = data[used - 1];	//set returnValue value to last added item's value
 			data[used - 1] = E();			//set the last item in the array to empty E item using default constructor
 			used--;							//decrement used member variable value to indicate the item was removed
-
 			return true;
 		}
 
@@ -95,6 +93,11 @@ public:
 	//inspectTop()
 	bool inspectTop(E& item) const
 	{
+		if (used > 0)
+		{
+			item = data[used - 1];	//sets item value to top array item's value
+			return true;
+		}
 
 		return false;
 	}
@@ -102,7 +105,12 @@ public:
 	//emptyBag()
 	void emptyBag()
 	{
-
+		if (used > 0)
+		{
+			for (int i = 0; i < used; i++)
+				data[i] = E();
+			used = 0;
+		}
 	}
 
 	//operator+=
