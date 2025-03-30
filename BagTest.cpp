@@ -8,9 +8,6 @@ using namespace std;
 KVpair<int, string> intStr1(1, "love");
 KVpair<int, string> intStr2(2, "compassion");
 KVpair<int, string> intStr3(3, "integrity");
-KVpair<string, int> strInt1("love", 1);
-KVpair<string, int> strInt2("compassion", 2);
-KVpair<string, int> strInt3("integrity", 3);
 
 KVpair<int, string> test1(1, "love");
 KVpair<int, string> test2(1, "other");
@@ -18,12 +15,20 @@ KVpair<int, string> test3(2, "compassion");
 KVpair<int, string> test4(2, "other");
 KVpair<int, string> test5(3, "integrity");
 KVpair<int, string> test6(3, "other");
+
+KVpair<string, int> strInt4("love", 1);
+KVpair<string, int> strInt5("compassion", 2);
+KVpair<string, int> strInt6("integrity", 3);
+
 KVpair<string, int> test7("love", 1);
 KVpair<string, int> test8("love", 4);
 KVpair<string, int> test9("compassion", 2);
 KVpair<string, int> test10("compassion", 5);
 KVpair<string, int> test11("integrity", 3);
 KVpair<string, int> test12("integrity", 6);
+
+KVpair<int, string> emptyIntStr;
+KVpair<string, int> emptyStrInt;
 
 int main()
 {
@@ -41,9 +46,13 @@ int main()
 
 	cout << "Size/cap check 1\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
 
-	intStr->remove(intStr3);
+	intStr->remove(intStr1);
 
 	cout << "Size/cap check 2\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
+
+	intStr->removeTop(emptyIntStr);
+
+	cout << "Size/cap check 3\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
 
 	cout << "Find check\n----------\n"
 		<< "Found 1 (first): " << intStr->find(test1) << '\n'
@@ -61,7 +70,13 @@ int main()
 
 	cout << "intStr pointer: " << intStr << "\n\n";
 
+
+
+
 	cout << "end intStr test\n\n\n\n\n\nbegin strInt test\n\n";
+
+
+
 
 	ABag<KVpair<string, int>>* strInt = new ABag<KVpair<string, int>>;
 
@@ -69,15 +84,21 @@ int main()
 
 	cout << "strInt pointer: " << strInt << "\n\n";
 
-	strInt->addItem(strInt1);
-	strInt->addItem(strInt2);
-	strInt->addItem(strInt3);
+	strInt->addItem(strInt4);
+	strInt->addItem(strInt5);
+	strInt->addItem(strInt6);
+
+	
 
 	cout << "Size/cap check 1\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
 
-	strInt->remove(strInt2);
+	strInt->remove(strInt4);
 
-	cout << "Size/cap check 1\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
+	cout << "Size/cap check 2\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
+
+	strInt->removeTop(emptyStrInt);
+
+	cout << "Size/cap check 3\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
 
 	cout << "Find check\n----------\n"
 		<< "Found 1 (first): " << strInt->find(test7) << '\n'
