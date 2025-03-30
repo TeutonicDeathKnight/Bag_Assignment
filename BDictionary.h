@@ -52,9 +52,8 @@ public:
 	//find()
 	bool find(const Key& k, E& returnValue) const
 	{
-
-
-		return false;
+		KVpair<Key, E> kvpair(k, returnValue);
+		return dictionary->find(kvpair);
 	}
 
 	//size()
