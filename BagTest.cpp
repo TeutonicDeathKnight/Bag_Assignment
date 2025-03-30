@@ -5,12 +5,25 @@
 
 using namespace std;
 
-const KVpair<int, string> intStr1(1, "love");
-const KVpair<int, string> intStr2(2, "compassion");
-const KVpair<int, string> intStr3(3, "integrity");
-const KVpair<string, int> strInt1("love", 1);
-const KVpair<string, int> strInt2("compassion", 2);
-const KVpair<string, int> strInt3("integrity", 3);
+KVpair<int, string> intStr1(1, "love");
+KVpair<int, string> intStr2(2, "compassion");
+KVpair<int, string> intStr3(3, "integrity");
+KVpair<string, int> strInt1("love", 1);
+KVpair<string, int> strInt2("compassion", 2);
+KVpair<string, int> strInt3("integrity", 3);
+
+KVpair<int, string> test1(1, "love");
+KVpair<int, string> test2(1, "other");
+KVpair<int, string> test3(2, "compassion");
+KVpair<int, string> test4(2, "other");
+KVpair<int, string> test5(3, "integrity");
+KVpair<int, string> test6(3, "other");
+KVpair<string, int> test7("love", 1);
+KVpair<string, int> test8("love", 4);
+KVpair<string, int> test9("compassion", 2);
+KVpair<string, int> test10("compassion", 5);
+KVpair<string, int> test11("integrity", 3);
+KVpair<string, int> test12("integrity", 6);
 
 int main()
 {
@@ -26,14 +39,11 @@ int main()
 	intStr->addItem(intStr2);
 	intStr->addItem(intStr3);
 
-	cout << "Size/cap check\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
+	cout << "Size/cap check 1\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
 
-	KVpair<int, string> test1(1, "love");
-	KVpair<int, string> test2(1, "other");
-	KVpair<int, string> test3(2, "compassion");
-	KVpair<int, string> test4(2, "other");
-	KVpair<int, string> test5(3, "integrity");
-	KVpair<int, string> test6(3, "other");
+	intStr->remove(intStr3);
+
+	cout << "Size/cap check 2\n----------\n" << "intStr size: " << intStr->size() << '\n' << "intStr cap: " << intStr->bagCapacity() << "\n\n";
 
 	cout << "Find check\n----------\n"
 		<< "Found 1 (first): " << intStr->find(test1) << '\n'
@@ -63,14 +73,11 @@ int main()
 	strInt->addItem(strInt2);
 	strInt->addItem(strInt3);
 
-	cout << "Size/cap check\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
+	cout << "Size/cap check 1\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
 
-	KVpair<string, int> test7("love", 1);
-	KVpair<string, int> test8("love", 4);
-	KVpair<string, int> test9("compassion", 2);
-	KVpair<string, int> test10("compassion", 5);
-	KVpair<string, int> test11("integrity", 3);
-	KVpair<string, int> test12("integrity", 6);
+	strInt->remove(strInt2);
+
+	cout << "Size/cap check 1\n----------\n" << "strInt size: " << strInt->size() << '\n' << "strInt cap: " << strInt->bagCapacity() << "\n\n";
 
 	cout << "Find check\n----------\n"
 		<< "Found 1 (first): " << strInt->find(test7) << '\n'

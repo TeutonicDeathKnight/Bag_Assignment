@@ -43,6 +43,22 @@ public:
 	//remove()
 	bool remove(E& item)
 	{
+		for (int i = 0; i < used; i++)
+		{
+			if (data[i] == item)
+			{
+				item = data[i];				//set the item value to the found data member variable array position's value
+
+				for (i; i < used - 1; i++)	//loop through data member variable including found item
+					data[i] = data[i + 1];	//set its value to the value of the next item in array
+
+				data[used - 1] = E();		//set last item in used portion of array to empty E item using default constructor
+
+				used--;						//decrement used member variable value to indicate the item was removed
+
+				return true;
+			}
+		}
 
 		return false;
 	}
@@ -61,7 +77,7 @@ public:
 		{
 			if (data[i] == returnValue)
 			{
-				returnValue = data[i];
+				returnValue = data[i];	//set returnValue value to the found data item's value
 				return true;
 			}
 		}
