@@ -132,13 +132,11 @@
     <ClInclude Include="BDictionary.h" />
     <ClInclude Include="book.h" />
     <ClInclude Include="dictionaryADT.h" />
-    <ClInclude Include="Functions.h" />
     <ClInclude Include="kvpair.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BagTest.cpp" />
     <ClCompile Include="bagtestmain.cpp" />
-    <ClCompile Include="Functions.cpp" />
-    <ClCompile Include="Your_Dictionary.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
