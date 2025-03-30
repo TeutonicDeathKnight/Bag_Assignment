@@ -21,6 +21,8 @@ public:
 		dictionary = new ABag<KVpair<Key, E>>((int)size);
 	}			
 	~BDictionary() { delete dictionary; }			// Base destructor
+	
+	// methods: clear, insert, remove, removeAny, find, size, etc.
 
 	//clear()
 	void clear()
@@ -29,13 +31,7 @@ public:
 	}
 
 	//insert()
-	bool insert(const Key& k, const E& e)
-	{
-		if (dictionary->addItem(KVpair<Key, E>(k, e)))
-			return true;
-
-		return false;
-	}
+	bool insert(const Key& k, const E& e) { return dictionary->addItem(KVpair<Key, E>(k, e)); }
 
 	//remove()
 	bool remove(const Key& k, E& rtnVal)
