@@ -4,14 +4,10 @@
 *
 * Created on July 14, 2012, 11:45 AM
 * Updated pointers to smart pointers in ABag and BDictionary on 12/14/2018
-* 
-* Edited by Zachary Seeley on 3/30/2025
-* updated initial main() cout statement to include name
 */
 
 #include <string>
 #include <sstream>
-#include "Functions.h"
 #include "ABag.h"
 #include "BDictionary.h"
 
@@ -31,7 +27,7 @@ int main(int argc, char** argv) {
 	BDictionary<int, string> myIntStrDict(DICTIONARY_SIZE);
 	BDictionary<string, int> myStrIntDict(DICTIONARY_SIZE);
 
-	/* start myIntStrDict tests -------------------------------------------*/
+	// myIntStrDict tests
 	// INSERT: myIntStrDict
 	cout << "Testing dictionary with <int, string> KV Pair\n";
 	for (int i = 1; i <= DICTIONARY_SIZE; i++) {
@@ -77,7 +73,7 @@ int main(int argc, char** argv) {
 
 	/* end myIntStrDict tests ---------------------------------------------*/
 
-	/* start myStrIntDict tests -------------------------------------------*/
+	// myStrIntDict tests
 	// INSERT: myStrIntDict
 	cout << "Testing dictionary with <string, int> KV Pair\n";
 	myStrIntDict.insert("Terri", 57);

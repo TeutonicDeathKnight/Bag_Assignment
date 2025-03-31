@@ -25,7 +25,7 @@ public:
 	// methods: clear, insert, remove, removeAny, find, size, etc.
 
 	//clear()
-	void clear() { dictionary->emptyBag(); }
+	void clear() { dictionary->emptyBag(); }	//call dictionary's function emptyBag to clear the dictionary
 
 	//insert()
 	bool insert(const Key& k, const E& e) { return dictionary->addItem(KVpair<Key, E>(k, e)); }
@@ -46,7 +46,12 @@ public:
 	//removeAny()
 	bool removeAny(E& returnValue)
 	{
-
+		KVpair<Key, E> kvPair;
+		if (dictionary->removeTop(kvPair))
+		{
+			returnValue = kvPair.value();
+			return true;
+		}
 
 		return false;
 	}
