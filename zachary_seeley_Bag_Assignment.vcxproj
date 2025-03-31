@@ -135,6 +135,7 @@
     <ClInclude Include="kvpair.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BagTest.cpp" />
     <ClCompile Include="bagtestmain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

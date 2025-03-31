@@ -38,5 +38,8 @@
     <ClCompile Include="bagtestmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BagTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
