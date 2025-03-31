@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Approach.doc
+/Zachary_Seeley_Programming_Assignment1.docx
