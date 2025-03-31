@@ -3,6 +3,8 @@
 * Author: Prof Terri Sipantzi
 *
 * You may use this template to implement your Dictionary
+* 
+* edited by Zachary Seeley on 3/30/2025
 */
 
 #ifndef BDICTIONARY_H
